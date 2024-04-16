@@ -24,9 +24,12 @@ class CNNBlock(nn.Module):
 
 class sub_CNN(nn.Module):
     def __init__(self,
-                 layersPerStage,groups=1):
+                 layersPerStage,groups=1,num_filters = [16,32,64]):
         super().__init__()
-        f1,f2,f3= (16,32,64) #the number of filters in each stage 
+        #f1,f2,f3= (16,32,64) #the number of filters in each stage 
+        f1 = num_filters[0]
+        f2 = num_filters[1]
+        f3 = num_filters[2]
         self.baseCNN = nn.Conv2d(3,f1,3,padding=1,groups=groups)
         self.base = nn.Sequential(nn.BatchNorm2d(f1),
                                   nn.ReLU())
