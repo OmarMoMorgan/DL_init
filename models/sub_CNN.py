@@ -30,7 +30,7 @@ class sub_CNN(nn.Module):
         f1 = num_filters[0]
         f2 = num_filters[1]
         f3 = num_filters[2]
-        self.baseCNN = nn.Conv2d(3,f1,3,padding=1,groups=groups)
+        self.baseCNN = nn.Conv2d(3,f1,3,padding=1)
         self.base = nn.Sequential(nn.BatchNorm2d(f1),
                                   nn.ReLU())
         self.stage1= nn.Sequential(*[CNNBlock(f1,f1,groups=groups)
