@@ -1,1 +1,1 @@
-# This is the main data modesl mainly cnn cerdits to Ahmed Tarek
+# This is classfication for datasets using convolutional neural networks
